@@ -16,8 +16,18 @@ fdescribe('Little CRM', function () {
         });
         
         describe('get', function () {
-            it('should ', function () {
-                
+            var httpClient;
+            beforeEach(function () {
+                httpClient = new window.ACME.HttpClient();
+            });
+            it('should exist', function () {
+                expect(httpClient.get).toBeDefined();
+                expect(httpClient.get).toBeInstanceOf(Function);
+            });
+            it('should accept url and callback', function () {
+                // httpClient.get('url', function () {});
+
+
             });
         })
     });
