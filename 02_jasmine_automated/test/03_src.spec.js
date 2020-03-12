@@ -24,18 +24,19 @@ fdescribe('Little CRM', function () {
                 expect(httpClient.get).toBeDefined();
                 expect(httpClient.get).toBeInstanceOf(Function);
             });
-            it('should accept url and callback', function () {
+            it('should accept url and callback', function (done) {
                 // httpClient.get('url', function () {});
 
-                var cbSpy = jasmine.createSpy('onreadystatechange', ).and.callFake(function () {
-                    console.log(httpClient);
-                });
-                httpClient.get('', cbSpy);
+                var cbSpy = jasmine.createSpy('cb').and.callFake(function () {
+                    console.log('passt');
 
-                expect(httpClient.get).toThrowError();
-                expect(cbSpy).toHaveBeenCalled();
+                    expect(httpClient.get).toThrowError();
+                    expect(cbSpy).toHaveBeenCalled();
+                    done();
+                });
+
+                httpClient.get('', cbSpy);
             });
         })
     });
-    
 });

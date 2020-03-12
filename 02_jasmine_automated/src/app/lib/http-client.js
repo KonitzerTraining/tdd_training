@@ -5,10 +5,17 @@ window.ACME.HttpClient = function () {
     }
 
     HttpClient.prototype.get = function (url, cb) {
-        if(typeof url !== 'string' || typeof cb !== 'function') {
+        if (typeof url !== 'string' || typeof cb !== 'function') {
             throw new Error();
         }
-        this.xhr.onreadystatechange = cb;
+
+       console.log(this);
+        this.xhr.onreadystatechange = function () {
+            if (this.readyState === 4) {
+                console.log('----------- call');
+                cb();
+            }
+        };
         this.xhr.open('GET', url);
         this.xhr.send();
     };
