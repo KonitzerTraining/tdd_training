@@ -17,4 +17,17 @@ describe('spy', function () {
         expect(getDataSpy).toHaveBeenCalled();
         expect(result).toEqual('3,4,5');
     });
+
+    it('should call fech', function () {
+
+        var fetchSpy = spyOn(window, 'fetch').and.callFake(function () {
+            return new Promise(function (resolve) {
+                resolve([]);
+            });
+        });
+
+        var result = pruefling();
+        expect(fetchSpy).toHaveBeenCalled();
+        expect(result).toBeInstanceOf(Promise);
+    });
 });
