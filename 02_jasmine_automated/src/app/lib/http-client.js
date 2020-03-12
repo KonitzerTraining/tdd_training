@@ -4,8 +4,13 @@ window.ACME.HttpClient = function () {
         this.xhr = new XMLHttpRequest();
     }
 
-    HttpClient.prototype.get = function () {
-        //this.xhr.open()
+    HttpClient.prototype.get = function (url, cb) {
+        if(typeof url !== 'string' || typeof cb !== 'function') {
+            throw new Error();
+        }
+        this.xhr.onreadystatechange = cb;
+        this.xhr.open('GET', url);
+        this.xhr.send();
     };
     return HttpClient;
 }();

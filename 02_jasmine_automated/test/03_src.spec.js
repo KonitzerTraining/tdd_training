@@ -27,7 +27,13 @@ fdescribe('Little CRM', function () {
             it('should accept url and callback', function () {
                 // httpClient.get('url', function () {});
 
+                var cbSpy = jasmine.createSpy('onreadystatechange', ).and.callFake(function () {
+                    console.log(httpClient);
+                });
+                httpClient.get('', cbSpy);
 
+                expect(httpClient.get).toThrowError();
+                expect(cbSpy).toHaveBeenCalled();
             });
         })
     });
