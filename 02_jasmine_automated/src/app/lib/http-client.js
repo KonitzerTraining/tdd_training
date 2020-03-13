@@ -9,7 +9,7 @@ window.ACME.HttpClient = function () {
             throw new Error();
         }
 
-       console.log(this);
+        console.log(this);
         this.xhr.onreadystatechange = function () {
             if (this.readyState === 4) {
                 console.log('----------- call');

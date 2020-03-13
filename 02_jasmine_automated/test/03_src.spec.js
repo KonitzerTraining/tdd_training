@@ -4,7 +4,7 @@ fdescribe('Little CRM', function () {
 
         it('should exist', function () {
             expect(window.ACME).toBeDefined();
-            expect(window.ACME).toBeInstanceOf(Object)
+            expect(window.ACME).toBeInstanceOf(Object);
         });
     });
 
@@ -13,7 +13,7 @@ fdescribe('Little CRM', function () {
             expect(window.ACME.HttpClient).toBeDefined();
             expect(window.ACME.HttpClient).toBeInstanceOf(Function);
         });
-        
+
         describe('get', function () {
             var httpClient;
             beforeEach(function () {
@@ -36,6 +36,6 @@ fdescribe('Little CRM', function () {
                 expect(httpClient.get).toThrowError();
                 httpClient.get('', cbSpy);
             });
-        })
+        });
     });
 });

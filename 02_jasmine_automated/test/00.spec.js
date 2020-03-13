@@ -7,10 +7,10 @@ xit('should compute', function () {
 });
 
 xit('should ', function () {
-    let a = new Promise(function () {
+    /* let a = new Promise(function () {
 
-    });
-
+     });
+ */
     //expect(1).toBe(2);
 });
 

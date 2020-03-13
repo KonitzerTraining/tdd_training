@@ -1,7 +1,7 @@
 describe('matcher', function () {
 
     it('toBe', function () {
-        var a = 1;
+        //   var a = 1;
         var b = {a: 1};
 
         expect(b).not.toBe({a: 1});
@@ -29,6 +29,7 @@ describe('matcher', function () {
                 throw new TypeError();
             }
         }
+
         expect(f).toThrowError();
     });
 

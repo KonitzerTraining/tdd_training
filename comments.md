@@ -1,3 +1,9 @@
+##   
+  
+## Statische Code-Analyse mit eslint 
+
+
+
     npx eslint --init
     ? How would you like to use ESLint? To check syntax, find problems, and enforce code style
     ? What type of modules does your project use? None of these

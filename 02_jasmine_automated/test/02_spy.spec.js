@@ -2,9 +2,9 @@ describe('spy', function () {
 
     it('should spy on', function () {
         var context = {
-          getData: function () {
-              return '3,4,5';
-          }
+            getData: function () {
+                return '3,4,5';
+            }
         };
 
         function pruefling () {
