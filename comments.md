@@ -4,7 +4,25 @@
 
 ## Jasmine mit Karma
 
+Bei vorhandener package.json: ```npm install```
+
     npm i -D jasmine-core karma karma-cli karma-jasmine karma-chrome-launcher karma-ie-launcher karma-mocha-repoter
+    npx karma init
+    (anstatt, bei globaler Installation) karma init
+    karma start karma.conf.js
+    
+Komplette Skripte in package.json
+
+      "scripts": {
+        "test": "karma start karma.conf.js", 
+        "lint": "eslint --fix ./src/**/*.js ./test/**/*.js",
+        "build": "karma start karma.conf.build.js",
+        "prebuild": "npm run lint"
+      },
+
+    > npm test
+    > npm run lint
+    > npm run build
   
 ## Statische Code-Analyse mit eslint 
 
