@@ -6,7 +6,6 @@ fdescribe('Little CRM', function () {
             expect(window.ACME).toBeDefined();
             expect(window.ACME).toBeInstanceOf(Object)
         });
-
     });
 
     describe('http-client', function () {
@@ -30,11 +29,11 @@ fdescribe('Little CRM', function () {
                 var cbSpy = jasmine.createSpy('cb').and.callFake(function () {
                     console.log('passt');
 
-                    expect(httpClient.get).toThrowError();
                     expect(cbSpy).toHaveBeenCalled();
                     done();
                 });
 
+                expect(httpClient.get).toThrowError();
                 httpClient.get('', cbSpy);
             });
         })
