@@ -1,8 +1,14 @@
-##   
+## Package.json 
+
+    npm init -y
+
+## Jasmine mit Karma
+
+    npm i -D jasmine-core karma karma-cli karma-jasmine karma-chrome-launcher karma-ie-launcher karma-mocha-repoter
   
 ## Statische Code-Analyse mit eslint 
 
-
+    npm i -D eslint
 
     npx eslint --init
     ? How would you like to use ESLint? To check syntax, find problems, and enforce code style
